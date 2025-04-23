@@ -12,10 +12,12 @@ describe('fillTank', () => {
       },
     };
 
+    // Убираем третий аргумент — проверяем поведение по умолчанию
     fillTank(customer, 10);
-    expect(customer.vehicle.fuelRemains).toBe(50);
+    expect(customer.vehicle.fuelRemains).toBe(50); // должен быть полный бак
   });
 
+  // остальные тесты оставляем как есть
   it('should not exceed max tank capacity', () => {
     const customer = {
       money: 1000,
